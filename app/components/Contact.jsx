@@ -20,7 +20,7 @@ const Contact = ({isDarkMode}) => {
 
     if (data.success) {
       setResult("Message sent successfully!");
-      event.target.reset(); // Xóa dữ liệu form sau khi gửi thành công
+      event.target.reset();
     } else {
       setResult(`Error: ${data.message}`);
     }
@@ -28,17 +28,13 @@ const Contact = ({isDarkMode}) => {
 
   return (
     <div>
-      <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20">
-        <h4 className="text-center mb-2 text-lg">My Portfolio</h4>
-        <h2 className="text-center text-5xl">My Latest Project</h2>
-        <p className="text-center max-w-2xl mx-auto mt-5 mb-12">
-          I am a frontend developer from Vietnam, with 10 years of experience in
-          multiple companies like Microsoft, Tesla, and Google.
-        </p>
+      <div id="contact" className="w-full px-[12%] py-0 lg:py-10 scroll-mt-10">
+        <h4 className="text-center mb-2 text-lg">Email me!</h4>
+        <h2 className="text-center text-5xl">Wanna keep contact?</h2>
       </div>
 
-      <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
-        <div className="grid grid-cols-1 w-full gap-6 mt-10 mb-8">
+      <form onSubmit={onSubmit} className="max-w-2xl mx-10 lg:mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-6 mt-10 mb-8">
           <input
             type="text"
             name="name"
@@ -61,7 +57,7 @@ const Contact = ({isDarkMode}) => {
           required
           className="w-full p-4 border border-gray-500 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white"
         ></textarea>
-        <p className="text-center mt-4">{result}</p>
+        <p className="text-center">{result}</p>
         <button
           type="submit"
           className="p-3 px-8 mb-10 w-max flex items-center justify-between gap-2

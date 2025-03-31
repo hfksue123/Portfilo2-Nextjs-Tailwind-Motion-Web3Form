@@ -29,7 +29,7 @@ export default function Home() {
       localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
-      localStorage.removeItem("theme"); // Xóa key thay vì để chuỗi rỗng
+      localStorage.removeItem("theme");
     }
   }, [isDarkMode]);
 

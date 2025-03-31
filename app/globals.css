@@ -7,7 +7,8 @@
   --font-ovo: 'Ovo', serif;
   --color-lightHover: oklch(0.65 0.2536 316.94);
   --color-darkHover: oklch(0.28 0.0094 316.94);
-  --color-darkTheme: oklch(0.08 0 316.94);
+  --color-darkTheme: oklch(0.11 0.0073 0);
+  --color-darkTheme2: oklch(0.16 0.0414 0);
   /* box-shadow (shadow outside) */
   --shadow-light: 4px 4px 0px rgba(255, 255, 255, 0.5);
   --shadow-dark: 4px 4px 0px rgba(0, 0, 0, 0.5);

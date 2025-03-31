@@ -22,7 +22,13 @@ thẻ html trong layout.js
 - `initial={{ scale: 0 }}
     whileInView={{ scale: 1 }}
     transition={{ duration: 0.8, type: "spring", stiffness: 100 }}`
-- Thêm các phương thức sau vào thẻ div vừa rồi, hiệu ứng là
+- Thêm các phương thức sau vào thẻ div vừa rồi
+4. Cài đặt Vercel
+>> npm install -g vercel
+>> vercel login
+>> vercel
+- Cài Vercel vì gh-page ko chạy đc Nextjs, đơn giản hơn thì k cần 2 đoạn mã ở dưới, chỉ cần cài và push lên github rồi vào trang chủ Vercel để kết nối github và import repo vừa push lên để deploy là xong.
+
 
 
 
