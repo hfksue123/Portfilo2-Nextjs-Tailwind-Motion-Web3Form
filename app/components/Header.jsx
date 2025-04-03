@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 const Header = () => {
   return (
     <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+    {/* profile-img */}
       <motion.div
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
@@ -13,6 +14,7 @@ const Header = () => {
       >
         <Image src={assets.profile_img} alt="" className="rounded-full w-32" />
       </motion.div>
+      {/* h3 */}
       <motion.h3
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -22,6 +24,7 @@ const Header = () => {
         Hi! I'm William Mark
         <Image src={assets.hand_icon} alt="" className="w-6" />
       </motion.h3>
+      {/* h1 */}
       <motion.h1
         initial={{ opacity: 0, y: 30, scale: 0.95 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
