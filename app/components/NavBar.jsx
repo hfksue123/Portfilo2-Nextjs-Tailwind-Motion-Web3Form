@@ -1,6 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FaSun, FaMoon, FaBars, FaTimes, FaArrowRight } from "react-icons/fa";
+// icon
+import { FaSun, FaMoon, FaArrowRight } from "react-icons/fa";
+import { FaBarsStaggered } from "react-icons/fa6";
+
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"; // Import từ ShadCN hoặc component UI của bạn
 
@@ -28,7 +31,10 @@ const NavBar = ({ isDarkMode, setIsDarkMode }) => {
       className={`w-full fixed top-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 transition-all duration-500
       ${isScroll ? "bg-white/50 backdrop-blur-sm shadow-sm shadow-gray-500 dark:bg-darkTheme/50 dark:shadow-white/50" : ""}`}
     >
-      <Link href="#top" className="text-2xl font-bold text-accent">
+      <Link
+        href="#top"
+        className="text-2xl font-bold text-textdark dark:text-textlight"
+      >
         Luke<span className="text-primary">.</span>
       </Link>
 
@@ -38,8 +44,10 @@ const NavBar = ({ isDarkMode, setIsDarkMode }) => {
           <li key={index}>
             <Link
               href={link.path}
-              className={`text-lg capitalize hover:text-accent transition-all pb-2 ${
-                activeLink === link.path ? "border-b-2 border-accent" : ""
+              className={`text-lg capitalize text-black dark:text-white hover:text-black/50  dark:hover:text-white/50 transition-all pb-2 ${
+                activeLink === link.path
+                  ? "border-b-2 border-darkTheme dark:border-white/50 "
+                  : ""
               }`}
               onClick={() => setActiveLink(link.path)}
             >
@@ -71,28 +79,29 @@ const NavBar = ({ isDarkMode, setIsDarkMode }) => {
       {/* Mobile Menu */}
       <Sheet>
         <SheetTrigger className="block md:hidden ml-3 p-2">
-          <FaBars className="text-2xl" />
+          <FaBarsStaggered className="text-2xl" />
         </SheetTrigger>
         <SheetContent
           side="right"
           className="bg-white dark:bg-black dark:text-white p-6"
         >
           <ul className="flex flex-col gap-4 h-screen justify-center items-center">
-  {Links.map((link, index) => (
-    <li key={index}>
-      <Link
-        href={link.path}
-        className={`justify-center items-center gap-2 text-lg capitalize px-4 py-2 rounded-md transition-all hover:bg-gray-100 dark:hover:bg-gray-800 ${
-          activeLink === link.path ? "border-l-4 pl-2" : ""
-        }`}
-        onClick={() => setActiveLink(link.path)}
-      >
-        {link.name}
-      </Link>
-    </li>
-  ))}
-</ul>
-
+            {Links.map((link, index) => (
+              <li key={index}>
+                <Link
+                  href={link.path}
+                  className={`justify-center items-center gap-2 text-lg capitalize px-4 py-2 rounded-md transition-all hover:bg-gray-100 dark:hover:bg-gray-800 ${
+                    activeLink === link.path
+                      ? "border-b-4 border-1 border-darkTheme dark:border-white/50"
+                      : ""
+                  }`}
+                  onClick={() => setActiveLink(link.path)}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </SheetContent>
       </Sheet>
     </nav>

@@ -18,6 +18,38 @@
   --drop-shadow-xs: 0 1px 1px rgb(0 0 0 / 0.05);
 }
 
+/* loading css */
+@layer utilities {
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes loading {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(120%);
+    }
+    100% {
+      transform: translateX(250%);
+    }
+  }
+
+  .animate-blink {
+    animation: blink 0.4s step-end infinite;
+  }
+
+  .animate-loading-bar {
+    animation: loading 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+}
+
 * {
   font-family: Outfit;
 }

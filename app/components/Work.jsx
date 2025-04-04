@@ -53,6 +53,41 @@ const Work = ({ isDarkMode }) => {
           className="w-4"
         />
       </a>
+
+      <div className="bg-black flex justify-center items-center min-h-screen ">
+      <div className="max-w-4xl bg-[#111] rounded-2xl shadow-lg shadow-gray-900 overflow-hidden flex flex-col md:flex-row">
+        {/* Hình ảnh dự án */}
+        <div className="md:w-1/2 relative">
+          <img
+            src="/image.png"
+            alt="Crypto Screener Application"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Nội dung */}
+        <div className="md:w-1/2 p-6 flex flex-col justify-center text-white">
+          <p className="text-green-400 text-sm font-semibold">Featured Project</p>
+          <h2 className="text-2xl font-bold mt-2">Crypto Screener Application</h2>
+          <p className="text-gray-400 mt-3 text-sm leading-relaxed">
+            A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, 
+            React Router and Recharts. It shows details regarding almost all cryptocurrencies. 
+            You can easily convert the price to your local currency.
+          </p>
+
+          {/* Nút CTA */}
+          <div className="mt-4 flex items-center gap-3">
+            <a
+              href="#"
+              className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-gray-200 transition"
+            >
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="w-5 h-5"/>
+              Visit Project
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };
