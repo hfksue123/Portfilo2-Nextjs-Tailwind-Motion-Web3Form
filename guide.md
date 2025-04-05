@@ -29,6 +29,12 @@ thẻ html trong layout.js
 >> vercel
 - Cài Vercel vì gh-page ko chạy đc Nextjs, đơn giản hơn thì k cần 2 đoạn mã ở dưới, chỉ cần cài và push lên github rồi vào trang chủ Vercel để kết nối github và import repo vừa push lên để deploy là xong.
 
-
-
+5. Chức năng
+- NavBar.jsx: navbar responsive + activeLink đồng bộ với window.location.pathname + window.location.hash khi tải trang + darkmode button.
+- PageTransition.jsx: để tạo 1 background trùng màu với background của trang web (để có hiệu ứng chuyển trang web) và khi reload lại trang hoặc chuyển trang thì background đó có hiệu ứng mờ dần lộ ra trang web chính, chừa thời gian cho hiệu ứng chuyển trang biến mất.
+- Stairs.jsx và StairTransition.jsx: để tạo hiệu ứng bậc thang đi lên và đi xuống khi load trang web.
+- ScrollUpButton.jsx: tạo 1 button mà khi nhấn vào thì sẽ tự động scroll lên top của trang web.
+- ScrollNavButton.jsx: tạo 5 button trong Home có chức năng khi nhấn vào sẽ tự scroll trang web đến vị trí tương ứng với id của từng components.
+- /about/page.js + Education.jsx + CircleIcon.jsx: tạo 1page có hiệu ứng framermotion khi cuộn trang web.
+- 
 

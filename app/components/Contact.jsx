@@ -33,7 +33,7 @@ const Contact = ({isDarkMode}) => {
         <h2 className="text-center text-5xl">Wanna keep contact?</h2>
       </div>
 
-      <form onSubmit={onSubmit} className="max-w-2xl mx-10 lg:mx-auto">
+      <form onSubmit={onSubmit} className="max-w-2xl mx-10 lg:mx-auto mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-6 mt-10 mb-8">
           <input
             type="text"

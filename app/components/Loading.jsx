@@ -25,7 +25,7 @@ export default function LoadingScreen ({ onComplete }) {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 text-gray-100 flex flex-col items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-darkTheme text-gray-100 flex flex-col items-center justify-center">
       {/* Text effect */}
       <div className="mb-6 text-4xl md:text-5xl font-mono font-bold tracking-wider">
         {text}
