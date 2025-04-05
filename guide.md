@@ -36,5 +36,5 @@ thẻ html trong layout.js
 - ScrollUpButton.jsx: tạo 1 button mà khi nhấn vào thì sẽ tự động scroll lên top của trang web.
 - ScrollNavButton.jsx: tạo 5 button trong Home có chức năng khi nhấn vào sẽ tự scroll trang web đến vị trí tương ứng với id của từng components.
 - /about/page.js + Education.jsx + CircleIcon.jsx: tạo 1page có hiệu ứng framermotion khi cuộn trang web.
-- 
+- AnimateText.jsx: tạo 1 animation text pop-up từng chữ khi load trang web.
 

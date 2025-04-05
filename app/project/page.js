@@ -136,13 +136,15 @@ const SimpleProject = ({ title, summary, img, link, github, tech }) => (
   border-2 border-grayShadow dark:border-gray-300 rounded-2xl p-3 md:p-6 shadow-[5px_5px_0_var(--gray)] dark:shadow-[5px_5px_0_var(--white)]"
   >
     <Link href={link} target="_blank" className="w-full">
+    <div className="overflow-hidden rounded-xl">
       <Image
         src={img}
         alt={title}
         width={600}
         height={300}
-        className="rounded-md w-full h-[150px] object-cover mb-4"
+        className="rounded-md w-full h-[150px] object-cover mb-4 transition hover:scale-105"
       />
+      </div>
     </Link>
     <h3 className="text-xl font-semibold">{title}</h3>
     <p className="text-gray-600 dark:text-white/70 mt-2">{summary}</p>

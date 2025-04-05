@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import CircleIcon from "../components/CircleIcon";
 import Education from "../components/Education";
+import AboutHeader from "../components/AboutHeader";
 
 const Details = ({ position, company, time, address, work }) => {
   const ref = useRef(null);
@@ -44,39 +45,42 @@ const About = () => {
   });
 
   return (
-    <div className="my-30">
-      <h2 className="font-bold text-4xl mb-32 w-full text-center">About</h2>
+    <div>
+      <AboutHeader />
+      <div className="my-30">
+        <h2 className="font-bold text-4xl mb-32 w-full text-center">About</h2>
 
-      <div ref={ref} className="w-[75%] mx-auto relative">
-        <motion.div
-          style={{ scaleY: scrollYProgress }}
-          className="absolute left-2 md:left-9 top-0 w-[4px] h-full bg-pinkTheme dark:bg-cyanTheme origin-top drop-shadow-[0_0_5px_rgba(0,255,255,0.2)]"
-        />
-        <ul className="w-full flex flex-col items-start justify-between ml-4">
-          <Details
-            position="Software Engineer"
-            company="Google"
-            time="2018 - 2020"
-            address="Mountain View, CA"
-            work="Developed and maintained a web application for a global e-commerce company using React, Node.js, and Firebase."
+        <div ref={ref} className="w-[75%] mx-auto relative">
+          <motion.div
+            style={{ scaleY: scrollYProgress }}
+            className="absolute left-2 md:left-9 top-0 w-[4px] h-full bg-pinkTheme dark:bg-cyanTheme origin-top drop-shadow-[0_0_5px_rgba(0,255,255,0.2)]"
           />
-          <Details
-            position="Software Engineer"
-            company="Facebook"
-            time="2020 - 2022"
-            address="Menlo Park, CA"
-            work="Developed and maintained a web application for a global e-commerce company using React, Node.js, and Firebase."
-          />
-          <Details
-            position="Software Engineer"
-            company="Facebook"
-            time="2020 - 2022"
-            address="Menlo Park, CA"
-            work="Developed and maintained a web application for a global e-commerce company using React, Node.js, and Firebase."
-          />
-        </ul>
+          <ul className="w-full flex flex-col items-start justify-between ml-4">
+            <Details
+              position="Software Engineer"
+              company="Google"
+              time="2018 - 2020"
+              address="Mountain View, CA"
+              work="Developed and maintained a web application for a global e-commerce company using React, Node.js, and Firebase."
+            />
+            <Details
+              position="Software Engineer"
+              company="Facebook"
+              time="2020 - 2022"
+              address="Menlo Park, CA"
+              work="Developed and maintained a web application for a global e-commerce company using React, Node.js, and Firebase."
+            />
+            <Details
+              position="Software Engineer"
+              company="Facebook"
+              time="2020 - 2022"
+              address="Menlo Park, CA"
+              work="Developed and maintained a web application for a global e-commerce company using React, Node.js, and Firebase."
+            />
+          </ul>
+        </div>
+        <Education />
       </div>
-      <Education />
     </div>
   );
 };

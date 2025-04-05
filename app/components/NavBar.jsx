@@ -8,9 +8,9 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Links = [
   { name: "Home", path: "/home" },
-  { name: "About me", path: "/about" },
+  { name: "About Me", path: "/about" },
   { name: "Services", path: "#services" },
-  { name: "My Work", path: "/project" },
+  { name: "Projects", path: "/project" },
   { name: "Contact", path: "#contact" },
 ];
 
