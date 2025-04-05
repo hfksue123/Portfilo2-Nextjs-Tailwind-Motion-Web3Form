@@ -99,81 +99,56 @@ const AnimationNumbers = ({ value }) => {
 const AboutHeader = () => {
   return (
     <>
-      <main className="flex w-full flex-col items-center justify-center relative">
-        <div className="pt-16">
-          <AnimateText text="Passion Fuels" className="my-10" />
-          <div className="grid w-full grid-cols-8 gap-16">
-            <div className="col-span-3 flex flex-col items-center justify-start">
-              <h2 className="mb-4 text-lg font-bold uppercase text-grayTheme/75 dark:text-white">
-                Biography
-              </h2>
-              <p className="font-medium ">
-                A lone robin perched on a low branch, its melodic song filling
-                the air with a sense of tranquil harmony. The scent of damp
-                earth and pine needles mingled, creating an earthy fragrance
-                that spoke of the ancient woods' timeless beauty.
-              </p>
-              <p className="my-4 font-medium ">
-                A lone robin perched on a low branch, its melodic song filling
-                the air with a sense of tranquil harmony. The scent of damp
-                earth and pine needles mingled, creating an earthy fragrance
-                that spoke of the ancient woods' timeless beauty.
-              </p>
-              <p className="font-medium ">
-                A lone robin perched on a low branch, its melodic song filling
-                the air with a sense of tranquil harmony. The scent of damp
-                earth and pine needles mingled, creating an earthy fragrance
-                that spoke of the ancient woods' timeless beauty.
-              </p>
-            </div>
-            <div
-              className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-grayTheme
-            dark:border-white p-8 bg-grayTheme dark:bg-white"
-            >
-              <div>
-                <Image
-                  src={assets2.background1}
-                  alt=""
-                  className="w-full h-auto rounded-2xl"
-                />
-              </div>
-              {/* stats */}
-            </div>
-            <div className="col-span-2 flex flex-col items-end justify-between">
-              <div className="flex flex-col items-end justify-center">
-                <div className="inline-block text-7xl font-bold">
-                  <AnimationNumbers value={100} />
-                  <h2 className="text-xl font-medium capitalize text-grayTheme dark:text-white">
-                    Satisfied Clients
-                  </h2>
-                </div>
-              </div>
-              <div className="flex flex-col items-end justify-center">
-                <div className="inline-block text-7xl font-bold">
-                <AnimationNumbers value={100} />
-                  <h2 className="text-xl font-medium capitalize text-grayTheme dark:text-white">
-                    Satisfied Clients
-                  </h2>
-                </div>
-              </div>
-              <div className="flex flex-col items-end justify-center">
-                <div className="inline-block text-7xl font-bold">
-                <AnimationNumbers value={100} />
-                  <h2 className="text-xl font-medium capitalize text-grayTheme dark:text-white">
-                    Satisfied Clients
-                  </h2>
-                </div>
-              </div>
-              <div className="flex flex-col items-end justify-center">
-                <div className="inline-block text-7xl font-bold">
-                <AnimationNumbers value={9} />
-                  <h2 className="text-xl font-medium capitalize text-grayTheme dark:text-white">
-                    Satisfied Clients
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
+      <main className="flex w-full flex-col items-center justify-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32">
+        <div className="w-full max-w-7xl pt-16">
+          <AnimateText text="Passion Fuels" className="my-10" mode="word"/>
+          <div className="flex flex-col lg:flex-row gap-8 w-full">
+  {/* BIOGRAPHY */}
+  <div className="flex-1 flex flex-col items-center lg:items-start justify-start">
+    <h2 className="mb-4 text-lg font-bold uppercase text-grayTheme/75 dark:text-white">
+      Biography
+    </h2>
+    <p className="font-medium mb-4">
+      &#8901;&nbsp;&nbsp;&nbsp; A lone robin perched on a low branch, its melodic song
+      filling the air with a sense of tranquil harmony...
+    </p>
+    <p className="font-medium mb-4">
+      &#8901;&nbsp;&nbsp;&nbsp; A lone robin perched on a low branch, its melodic song
+      filling the air with a sense of tranquil harmony...
+    </p>
+    <p className="font-medium">
+      &#8901;&nbsp;&nbsp;&nbsp; A lone robin perched on a low branch, its melodic song
+      filling the air with a sense of tranquil harmony...
+    </p>
+  </div>
+
+  {/* IMAGE */}
+  <div className="flex-1 relative h-max rounded-2xl border border-solid border-grayTheme dark:border-white bg-grayTheme dark:bg-white">
+    <Image
+      src={assets2.background1}
+      alt=""
+      className="w-full h-auto rounded-2xl"
+    />
+  </div>
+
+  {/* STATS */}
+  <div className="flex-1 grid grid-cols-2 grid-rows-2 gap-8 items-center text-right">
+    {[100, 100, 100, 9].map((val, idx) => (
+      <div
+        key={idx}
+        className="flex flex-col items-center justify-center"
+      >
+        <div className="inline-block text-2xl md:text-5xl font-bold">
+          <AnimationNumbers value={val} />
+        </div>
+        <h2 className="text-sm md:text-lg capitalize text-grayTheme dark:text-white">
+          Satisfied Clients
+        </h2>
+      </div>
+    ))}
+  </div>
+</div>
+
         </div>
       </main>
     </>

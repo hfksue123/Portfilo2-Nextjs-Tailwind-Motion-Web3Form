@@ -18,8 +18,8 @@ const NavBar = () => {
   const { isDarkMode, setIsDarkMode } = useTheme();
   const [isScroll, setIsScroll] = useState(false);
   const [activeLink, setActiveLink] = useState("");
+  const [isOpen, setIsOpen] = useState(false); // Thêm state này
 
-  // Set activeLink theo URL khi trang vừa load
   useEffect(() => {
     const currentPath = window.location.pathname + window.location.hash;
     setActiveLink(currentPath === "/" ? "/home" : currentPath);
@@ -70,7 +70,7 @@ const NavBar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <Sheet>
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger className="block md:hidden ml-3 p-2">
           <FaBarsStaggered className="text-2xl" />
         </SheetTrigger>
@@ -83,7 +83,10 @@ const NavBar = () => {
                   className={`justify-center items-center gap-2 text-lg capitalize px-4 py-2 rounded-md transition-all hover:bg-gray-100 dark:hover:bg-gray-800 ${
                     activeLink === link.path ? "border-b-4 border-darkTheme dark:border-white/50" : ""
                   }`}
-                  onClick={() => setActiveLink(link.path)}
+                  onClick={() => {
+                    setActiveLink(link.path);
+                    setIsOpen(false); // Đóng Sheet khi click link
+                  }}
                 >
                   {link.name}
                 </Link>

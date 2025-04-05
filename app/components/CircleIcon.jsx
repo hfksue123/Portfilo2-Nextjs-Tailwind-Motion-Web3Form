@@ -4,7 +4,6 @@ import { motion, useScroll } from "framer-motion";
 const CircleIcon = ({ reference }) => {
   const { scrollYProgress } = useScroll({
     target: reference,
-    offset: ['center center', 'end center'],
   });
   return (
     <figure className="absolute -left-7 md:left-0 ">
