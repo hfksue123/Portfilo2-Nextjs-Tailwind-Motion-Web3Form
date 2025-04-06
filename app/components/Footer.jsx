@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <motion.div
-      initial={{ y: 70 }}
+      initial={{ y: 50 }}
       whileInView={{ y: 0 }}
-      transition={{ duration: 0.5, type: "spring" }}
+      transition={{ duration: 0.5, type: "linear" }}
     >
       <footer className="w-full border-t-2 border-gray-500 dark:border-white/50 font-medium text-xlbg-gray-900 text-grayTheme dark:text-white py-8">
         <div className="flex flex-col gap-5 md:flex-row items-center justify-evenly">

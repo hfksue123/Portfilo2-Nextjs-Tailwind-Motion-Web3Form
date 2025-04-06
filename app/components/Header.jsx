@@ -59,7 +59,7 @@ const Header = () => {
            text-white flex items-center gap-2 dark:bg-transparent transition-colors duration-300 ease-in-out"
         >
           Contact Me
-          <Image src={assets.right_arrow_white} className="w-4" />
+          <Image src={assets.right_arrow_white} className="w-4" alt=""/>
         </motion.a>
         <motion.a
           initial={{ opacity: 0, y: 30 }}
@@ -70,7 +70,7 @@ const Header = () => {
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 dark:bg-white dark:text-black"
         >
           My resume
-          <Image src={assets.download_icon} className="w-4" />
+          <Image src={assets.download_icon} className="w-4" alt=""/>
         </motion.a>
       </div>
     </div>

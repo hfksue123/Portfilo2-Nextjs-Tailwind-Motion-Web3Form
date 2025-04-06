@@ -36,6 +36,10 @@ import send_icon from "./send-icon.png";
 import right_arrow_bold from "./right-arrow-bold.png";
 import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
 import background1 from "./background1.png";
+import school1 from "./school1.jpg";
+import school2 from "./school2.jpg";
+import school3 from "./school3.jpg";
+import school4 from "./school4.jpg";
 
 export const assets = {
   user_image,
@@ -80,6 +84,10 @@ export const assets = {
 // for non-js files
 const assets2 = {
   background1,
+  school1,
+  school2,
+  school3,
+  school4,
 };
 
 export const workData = [

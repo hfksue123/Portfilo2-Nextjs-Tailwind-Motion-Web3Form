@@ -4,29 +4,30 @@ import { useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import CircleIcon from "../components/CircleIcon";
+import Image from "next/image";
+import assets from "@/assets/assets";
 
 const Details = ({ type, time, place, info }) => {
   const ref = useRef(null);
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between"
+      className="w-[30%] max-sm:w-[80%] mx-auto flex flex-col items-center justify-between"
     >
       <CircleIcon reference={ref} />
-      
+
       {/* spring effect pop-up */}
       <motion.div
         initial={{ y: 50 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: "spring" }}
+        className="flex flex-col items-left"
       >
-        <h3 className="capitalize font-bold text-2xl">
-          {type}
-        </h3>
+        <h3 className="capitalize font-bold text-2xl">{type}</h3>
         <span className="capitalize font-medium text-dark/75">
           {time} | {place}
         </span>
-        <p className="font-medium w-full">{info}</p>
+        <p className="font-medium">{info}</p>
       </motion.div>
     </li>
   );
@@ -46,33 +47,74 @@ const Education = () => {
       <div ref={ref} className="w-[75%] mx-auto relative">
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="absolute left-2 md:left-9 top-0 w-[4px] h-full bg-pinkTheme dark:bg-cyanTheme origin-top drop-shadow-[0_0_5px_rgba(0,255,255,0.2)]"
+          className="absolute left-2 md:left-9 top-0 w-[4px] h-full bg-pinkTheme 
+      dark:bg-cyanTheme origin-top drop-shadow-[0_0_5px_rgba(0,255,255,0.2)]"
         />
-        <ul className="w-full flex flex-col items-start justify-between ml-4">
-          <Details
-            type="High School"
-            time="2016 - 2018"
-            place="Sai Gon University"
-            info="High School of Science and Technology."
-            />
+
+        <ul className="w-full flex flex-col items-start justify-between ml-4 space-y-8">
+          {/* Item 1 */}
+          <li className="flex w-full justify-center items-center gap-6">
             <Details
-            type="High School"
-            time="2016 - 2018"
-            place="Sai Gon University"
-            info="High School of Science and Technology."
+              type="University"
+              time="2020 - 2025"
+              place="University of Science"
+              info="Major: Applied Mathematics and Informatics."
             />
+            <Image
+              src={assets.school4}
+              alt="High School"
+              width={300}
+              className="rounded-xl shadow-md object-cover max-sm:hidden border border-solid border-grayTheme dark:border-white"
+            />
+          </li>
+
+          {/* Item 2 */}
+          <li className="flex w-full justify-between items-start gap-6">
             <Details
-            type="High School"
-            time="2016 - 2018"
-            place="Sai Gon University"
-            info="High School of Science and Technology."
+              type="High"
+              time="2018 - 2020"
+              place="Nguyen Trai High School"
+              info="An Khe town, Gia Lai"
             />
+            <Image
+              src={assets.school3}
+              alt="High School"
+              width={300}
+              className="rounded-xl shadow-md object-cover max-sm:hidden border border-solid border-grayTheme dark:border-white"
+            />
+          </li>
+
+          {/* Item 3 */}
+          <li className="flex w-full justify-between items-start gap-6">
             <Details
-            type="High School"
-            time="2016 - 2018"
-            place="Sai Gon University"
-            info="High School of Science and Technology."
+              type="Secondary"
+              time="2020 - 2023"
+              place="Chu Van An Secondary School"
+              info="Dak Po, Gia Lai"
             />
+            <Image
+              src={assets.school2}
+              alt="Secondary"
+              width={300}
+              className="rounded-xl shadow-md object-cover max-sm:hidden border border-solid border-grayTheme dark:border-white"
+            />
+          </li>
+
+          {/* Item 4 */}
+          <li className="flex w-full justify-between items-start gap-6">
+            <Details
+              type="Primary"
+              time="2023 - Now"
+              place="Tran Phu Primary School"
+              info="Dak Po, Gia Lai"
+            />
+            <Image
+              src={assets.school1}
+              alt="High School"
+              width={300}
+              className="rounded-xl shadow-md object-cover max-sm:hidden border border-solid border-grayTheme dark:border-white"
+            />
+          </li>
         </ul>
       </div>
     </div>
