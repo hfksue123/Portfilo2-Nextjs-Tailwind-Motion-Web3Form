@@ -1,10 +1,28 @@
-import { assets } from "@/assets/assets";
-import React from "react";
-import Image from "next/image";
-import { infoList } from "@/assets/assets";
-import { toolsData } from "@/assets/assets";
+import { assets } from '@/assets/assets';
+import React from 'react';
+import Image from 'next/image';
+import { toolsData } from '@/assets/assets';
+import { FaCode, FaGraduationCap, FaProjectDiagram } from 'react-icons/fa';
 
-const About = ({isDarkMode}) => {
+const infoList = [
+  {
+    icon: <FaCode className="text-2xl text-cyanTheme" />,
+    title: 'Languages',
+    description: 'HTML, CSS, JavaScript, React Js, Next Js, Vue Js',
+  },
+  {
+    icon: <FaGraduationCap className="text-2xl text-cyanTheme" />,
+    title: 'Education',
+    description: 'B.Tech in Computer Science',
+  },
+  {
+    icon: <FaProjectDiagram className="text-2xl text-cyanTheme" />,
+    title: 'Projects',
+    description: 'More than 5 projects',
+  },
+];
+
+const About = () => {
   return (
     <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
       <h4 className="text-center mb-2 text-lg">Introduction</h4>
@@ -25,14 +43,14 @@ const About = ({isDarkMode}) => {
             contributing to their success and growth.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
-            {infoList.map(({ icon, iconDark, title, description }, index) => (
+            {infoList.map(({ icon, title, description }, index) => (
               <li
                 key={index}
                 className="border-[0.5px] border-gray-500 rounded-xl p-6 cursor-pointer 
                 hover:bg-darktheme2 hover:-translate-y-1 hover:shadow-dark duration-300 transition-all
-                dark:border-white dark:hover:shadow-[0_4px_10px_#ff388b]"
+                dark:border-white dark:hover:shadow-[3px_3px_0_#ffffff]"
               >
-                <Image src={isDarkMode ? iconDark : icon} alt={title} className="w-7 mt-3" />
+                <div className="mt-3">{icon}</div>
                 <h3 className="my-4 font-semibold text-gray-700 dark:text-white">{title}</h3>
                 <p className="text-gray-600 text-sm dark:text-white/70">{description}</p>
               </li>
@@ -44,7 +62,7 @@ const About = ({isDarkMode}) => {
             {toolsData.map((tool, index) => (
               <li key={index} className="flex items-center justify-center w-12 sm:w-14 aspect-square border
               border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500 dark:bg-darkHover">
-                <Image src={tool} alt='tool' className="w-5 sm:w-7" />
+                <Image src={tool} alt="tool" className="w-8 sm:w-7" />
               </li>
             ))}
           </ul>

@@ -38,7 +38,7 @@ const PageTransition = ({ children }) => {
 
       {/* Children chỉ render khi overlay biến mất */}
       {shouldRender && (
-        <div className="opacity-100 transition-opacity duration-100">
+        <div className="opacity-100 duration-100">
           {children}
         </div>
       )}

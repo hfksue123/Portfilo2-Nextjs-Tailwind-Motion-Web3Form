@@ -12,7 +12,7 @@ const Details = ({ type, time, place, info }) => {
   return (
     <li
       ref={ref}
-      className="w-[30%] max-sm:w-[80%] mx-auto flex flex-col items-center justify-between"
+      className="w-[80%] mx-auto flex flex-col items-center justify-between"
     >
       <CircleIcon reference={ref} />
 
@@ -41,7 +41,7 @@ const Education = () => {
   });
 
   return (
-    <div className="my-64">
+    <div className="my-30">
       <h2 className="font-bold text-4xl mb-32 w-full text-center">Education</h2>
 
       <div ref={ref} className="w-[75%] mx-auto relative">
@@ -88,7 +88,7 @@ const Education = () => {
           <li className="flex w-full justify-between items-start gap-6">
             <Details
               type="Secondary"
-              time="2020 - 2023"
+              time="2013 - 2017"
               place="Chu Van An Secondary School"
               info="Dak Po, Gia Lai"
             />
@@ -104,7 +104,7 @@ const Education = () => {
           <li className="flex w-full justify-between items-start gap-6">
             <Details
               type="Primary"
-              time="2023 - Now"
+              time="2008 - 2013"
               place="Tran Phu Primary School"
               info="Dak Po, Gia Lai"
             />

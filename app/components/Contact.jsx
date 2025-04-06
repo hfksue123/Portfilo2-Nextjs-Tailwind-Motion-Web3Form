@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
+import { IoIosSend } from "react-icons/io";
 // Send email
 const Contact = ({isDarkMode}) => {
   const [result, setResult] = useState("");
@@ -40,14 +41,14 @@ const Contact = ({isDarkMode}) => {
             name="name"
             placeholder="Enter Your Name"
             required
-            className="p-3 border border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white"
+            className="p-3 border text-darkTheme/70 dark:text-gray-400 border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white"
           />
           <input
             type="email"
             name="email"
             placeholder="Enter Your Email"
             required
-            className="p-3 border border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white"
+            className="p-3 border text-darkTheme/70 dark:text-gray-400 border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white"
           />
         </div>
         <textarea
@@ -55,7 +56,7 @@ const Contact = ({isDarkMode}) => {
           rows="3"
           placeholder="Enter your message"
           required
-          className="w-full p-4 border border-gray-500 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white"
+          className="w-full p-4 border text-darkTheme/70 dark:text-gray-400 border-gray-500 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white"
         ></textarea>
         <p className="text-center">{result}</p>
         <button
@@ -64,8 +65,8 @@ const Contact = ({isDarkMode}) => {
         bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 outline-none border-[0.5px]
           border-gray-400 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover cursor:pointer"
         >
-          Submit now{" "}
-          <Image src={isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_white} alt="" className="w-4" />
+          Submit now
+          <IoIosSend className="w-4" />
         </button>
       </form>
     </div>

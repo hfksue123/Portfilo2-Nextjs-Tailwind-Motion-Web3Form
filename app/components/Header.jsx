@@ -2,6 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 import { motion } from "motion/react";
+import { FaArrowRightLong } from "react-icons/fa6";
+import AnimateText from "@/components/AnimateText";
+import { stagger } from "motion";
 
 const Header = () => {
   return (
@@ -27,21 +30,13 @@ const Header = () => {
         Hi! I'm Gia Bao 👋
       </motion.h3>
       {/* h1 */}
-      <motion.h1
-        initial={{ opacity: 0, y: 30, scale: 0.95 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{
-          duration: 0.4,
-          ease: [0.25, 0.1, 0.25, 1],
-          delay: 0.3,
-          type: "spring",
-          stiffness: 80,
-        }}
-        className="text-3xl sm:text-6xl lg:text-[66px]"
-      >
-        Frontend web developer living in VietNam.
-      </motion.h1>
-      <p className="max-w-2xl mx-auto">
+      <AnimateText mode="word" staggerChildren={0.1}>
+        <h1 className="text-3xl sm:text-6xl lg:text-[66px]">
+          Frontend web developer living in VietNam.
+        </h1>
+      </AnimateText>
+      {/* p */}
+      <p className="max-w-2xl mx-4 max-sm:text-justify">
         I am a frontend developer from VietNam, with experience in multiple
         projects and a passion for creating beautiful and functional websites
         using React.js, Next.js, and other frontend frameworks. I am also
@@ -59,7 +54,7 @@ const Header = () => {
            text-white flex items-center gap-2 dark:bg-transparent transition-colors duration-300 ease-in-out"
         >
           Contact Me
-          <Image src={assets.right_arrow_white} className="w-4" alt=""/>
+          <FaArrowRightLong className="w-4" />
         </motion.a>
         <motion.a
           initial={{ opacity: 0, y: 30 }}
@@ -70,7 +65,7 @@ const Header = () => {
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 dark:bg-white dark:text-black"
         >
           My resume
-          <Image src={assets.download_icon} className="w-4" alt=""/>
+          <Image src={assets.download_icon} className="w-4" alt="" />
         </motion.a>
       </div>
     </div>

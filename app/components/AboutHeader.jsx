@@ -102,12 +102,20 @@ const AboutHeader = () => {
     <>
       <main className="flex w-full flex-col items-center justify-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32">
         <div className="w-full max-w-7xl pt-16">
-          <AnimateText text="Passion Fuels" className="my-10" mode="word" />
+          <AnimateText mode="word">
+            <p
+              className="my-10 inline-block w-full text-grayTheme dark:text-white 
+              text-center font-bold capitalize text-4xl md:text-7xl"
+              mode="word"
+            >
+              Who I Am
+            </p>
+          </AnimateText>
           <div className="flex flex-col lg:flex-row gap-8 w-full">
             {/* BIOGRAPHY */}
             <div className="flex-1 flex flex-col items-center lg:items-start justify-start">
-              <h2 className="mb-4 text-lg font-bold uppercase text-grayTheme/75 dark:text-white">
-                Biography
+              <h2 className="mb-3 text-lg font-bold uppercase text-grayTheme/75 dark:text-white">
+                Introduction
               </h2>
               <motion.p
                 initial={{ opacity: 0, x: -50 }}
@@ -115,36 +123,36 @@ const AboutHeader = () => {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="font-medium mb-4"
               >
-                &#8901;&nbsp;&nbsp;&nbsp; A lone robin perched on a low branch,
-                its melodic song filling the air with a sense of tranquil
-                harmony...
+                &#8901;&nbsp;&nbsp;&nbsp; I enjoy capturing beautiful moments
+                and finding inspiration in the way light, color because they can
+                tell a story or express an emotion.
               </motion.p>
+
               <motion.p
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="font-medium mb-4"
               >
-                &#8901;&nbsp;&nbsp;&nbsp; A lone robin perched on a low branch,
-                its melodic song filling the air with a sense of tranquil
-                harmony...
+                &#8901;&nbsp;&nbsp;&nbsp; I’m always looking for opportunities
+                that push me out of my comfort zone.
               </motion.p>
+
               <motion.p
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.1, ease: "easeOut" }}
                 className="font-medium"
               >
-                &#8901;&nbsp;&nbsp;&nbsp; A lone robin perched on a low branch,
-                its melodic song filling the air with a sense of tranquil
-                harmony...
+                &#8901;&nbsp;&nbsp;&nbsp; I'm a quick learner and someone who
+                naturally pays attention to small details.
               </motion.p>
             </div>
 
             {/* IMAGE */}
             <div className="flex-1 relative h-max rounded-2xl border border-solid border-grayTheme dark:border-white bg-grayTheme dark:bg-white">
               <Image
-                src={assets2.background1}
+                src={assets2.profile2}
                 alt=""
                 className="w-full h-auto rounded-2xl"
               />
@@ -152,19 +160,45 @@ const AboutHeader = () => {
 
             {/* STATS */}
             <div className="flex-1 grid grid-cols-2 grid-rows-2 gap-8 items-center text-right">
-              {[100, 100, 100, 9].map((val, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col items-center justify-center"
-                >
-                  <div className="inline-block text-2xl md:text-5xl font-bold">
-                    <AnimationNumbers value={val} />
-                  </div>
-                  <h2 className="text-sm md:text-lg capitalize text-grayTheme dark:text-white">
-                    Satisfied Clients
-                  </h2>
+              {/* Stat 1 */}
+              <div className="flex flex-col items-center justify-center">
+                <div className="inline-block text-2xl md:text-5xl font-bold">
+                  <AnimationNumbers value={10} />
                 </div>
-              ))}
+                <h2 className="text-sm md:text-lg capitalize text-grayTheme dark:text-white">
+                Group Projects
+                </h2>
+              </div>
+
+              {/* Stat 2 */}
+              <div className="flex flex-col items-center justify-center">
+                <div className="inline-block text-2xl md:text-5xl font-bold">
+                  <AnimationNumbers value={7} />
+                </div>
+                <h2 className="text-sm md:text-lg capitalize text-grayTheme dark:text-white">
+                Personal Projects
+                </h2>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="flex flex-col items-center justify-center">
+                <div className="inline-block text-2xl md:text-5xl font-bold">
+                  <AnimationNumbers value={15} />
+                </div>
+                <h2 className="text-sm md:text-lg capitalize text-grayTheme dark:text-white">
+                Tools/Techs Explored
+                </h2>
+              </div>
+
+              {/* Stat 4 */}
+              <div className="flex flex-col items-center justify-center">
+                <div className="inline-block text-2xl md:text-5xl font-bold">
+                  <AnimationNumbers value={50} />
+                </div>
+                <h2 className="text-sm md:text-lg capitalize text-grayTheme dark:text-white">
+                Hours' Coding Weekly
+                </h2>
+              </div>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ import CircleIcon from "../components/CircleIcon";
 import Education from "../components/Education";
 import AboutHeader from "../components/AboutHeader";
 
-const Details = ({ position, company, time, address, work }) => {
+const Details = ({ category, language, time, score, description }) => {
   const ref = useRef(null);
   return (
     <li
@@ -22,16 +22,16 @@ const Details = ({ position, company, time, address, work }) => {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: "spring" }}
       >
-        <h3 className="capitalize font-bold text-2xl">
-          {position}&nbsp;
-          <a target="_blank" className="text-pink-600/60 capitalize">
-            @{company}
+        <h3 className="capitalize font-bold text-xl md:text-2xl">
+          {category}&nbsp;
+          <a target="_blank" className="text-pinkTheme capitalize">
+            @{language}
           </a>
         </h3>
         <span className="capitalize font-medium text-dark/75">
-          {time} | {address}
+          {time} | {score}
         </span>
-        <p className="font-medium w-full">{work}</p>
+        <p className="font-medium w-full ">{description}</p>
       </motion.div>
     </li>
   );
@@ -48,34 +48,36 @@ const About = () => {
     <div>
       <AboutHeader />
       <div className="my-30">
-        <h2 className="font-bold text-4xl mb-32 w-full text-center">About</h2>
+        <h2 className="font-bold text-4xl mb-32 w-full text-center">
+          Language
+        </h2>
 
         <div ref={ref} className="w-[75%] mx-auto relative">
           <motion.div
             style={{ scaleY: scrollYProgress }}
             className="absolute left-2 md:left-9 top-0 w-[4px] h-full bg-pinkTheme dark:bg-cyanTheme origin-top drop-shadow-[0_0_5px_rgba(0,255,255,0.2)]"
           />
-          <ul className="w-full flex flex-col items-start justify-between ml-4">
+          <ul className="w-full flex flex-col items-start justify-between ">
             <Details
-              position="Software Engineer"
-              company="Google"
-              time="2018 - 2020"
-              address="Mountain View, CA"
-              work="Developed and maintained a web application for a global e-commerce company using React, Node.js, and Firebase."
+              category="TOEIC Listening & Reading"
+              language="English"
+              time="15/08/2024"
+              score="805 Points"
+              description="I possess strong reading comprehension skills in English and am able to effectively understand spoken language."
             />
             <Details
-              position="Software Engineer"
-              company="Facebook"
-              time="2020 - 2022"
-              address="Menlo Park, CA"
-              work="Developed and maintained a web application for a global e-commerce company using React, Node.js, and Firebase."
+              category="TOEIC Listening & Reading"
+              language="English"
+              time="15/03/2025"
+              score="290 Points"
+              description="I am capable of communicating verbally at a basic conversational level and have a solid command of written English."
             />
             <Details
-              position="Software Engineer"
-              company="Facebook"
-              time="2020 - 2022"
-              address="Menlo Park, CA"
-              work="Developed and maintained a web application for a global e-commerce company using React, Node.js, and Firebase."
+              category="Native Language"
+              language="Vietnamese"
+              time="2002 - Present"
+              score="N/A"
+              description="Vietnamese is my native language and mother tongue, which I have used fluently in both personal and academic settings throughout my life."
             />
           </ul>
         </div>

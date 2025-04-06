@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import assets from "@/assets/assets";
 import ScrollUpButton from "@/components/ScrollUpButton";
 import { FaReact, FaVuejs, FaCss3Alt, FaGithub } from "react-icons/fa";
+import { SiCloudinary } from "react-icons/si";
+import AnimateText from "@/components/AnimateText";
 
 // Dữ liệu project
 
@@ -20,6 +22,7 @@ const projects = [
     tech: [
       { icon: FaVuejs, name: "Vue.js" },
       { icon: FaCss3Alt, name: "CSS3" },
+      { icon: SiCloudinary, name: "Cloudinary" },
     ],
   },
   {
@@ -136,14 +139,14 @@ const SimpleProject = ({ title, summary, img, link, github, tech }) => (
   border-2 border-grayShadow dark:border-gray-300 rounded-2xl p-3 md:p-6 shadow-[5px_5px_0_var(--gray)] dark:shadow-[5px_5px_0_var(--white)]"
   >
     <Link href={link} target="_blank" className="w-full">
-    <div className="overflow-hidden rounded-xl">
-      <Image
-        src={img}
-        alt={title}
-        width={600}
-        height={300}
-        className="rounded-md w-full h-[150px] object-cover mb-4 transition hover:scale-105"
-      />
+      <div className="overflow-hidden rounded-xl">
+        <Image
+          src={img}
+          alt={title}
+          width={600}
+          height={300}
+          className="rounded-md w-full h-[150px] object-cover mb-4 transition hover:scale-105"
+        />
       </div>
     </Link>
     <h3 className="text-xl font-semibold">{title}</h3>
@@ -151,28 +154,28 @@ const SimpleProject = ({ title, summary, img, link, github, tech }) => (
 
     {/* Tech Icons + tooltip*/}
     {tech && (
-        <div className="flex flex-wrap items-center gap-3 mb-4 text-3xl text-blue-500 dark:text-cyanTheme">
-          {tech.map(({ icon: Icon, name }, index) => (
-            <div key={index} className="relative group">
-              {Icon ? (
-                <>
-                  <Icon className="cursor-pointer" />
-                  {/* tooltip */}
-                  <span
-                    className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white 
+      <div className="flex flex-wrap items-center gap-3 mb-4 text-3xl text-blue-500 dark:text-cyanTheme">
+        {tech.map(({ icon: Icon, name }, index) => (
+          <div key={index} className="relative group">
+            {Icon ? (
+              <>
+                <Icon className="cursor-pointer" />
+                {/* tooltip */}
+                <span
+                  className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white 
           text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 
           transition pointer-events-none whitespace-nowrap z-10"
-                  >
-                    {name}
-                  </span>
-                </>
-              ) : (
-                <span className="text-red-500 text-xs">Invalid Icon</span>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
+                >
+                  {name}
+                </span>
+              </>
+            ) : (
+              <span className="text-red-500 text-xs">Invalid Icon</span>
+            )}
+          </div>
+        ))}
+      </div>
+    )}
 
     {/* Buttons */}
     <div className="flex items-center justify-between gap-3 mt-4">
@@ -197,8 +200,12 @@ const Project = () => {
   const others = projects.filter((p) => !p.featured);
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-16 mt-20">
-      <h1 className="text-3xl font-bold text-center mb-12">My Projects</h1>
+    <main className="max-w-6xl mx-auto px-4 py-10 mt-20">
+      <AnimateText mode="word">
+        <h1 className="text-4xl md:text-7xl font-bold text-center mb-12">
+          My Projects
+        </h1>
+      </AnimateText>
 
       {/* Featured 1 */}
       {featured[0] && (
