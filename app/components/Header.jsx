@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import AnimateText from "@/components/AnimateText";
 import { stagger } from "motion";
+import { FaDownload } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -65,7 +66,7 @@ const Header = () => {
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 dark:bg-white dark:text-black"
         >
           My resume
-          <Image src={assets.download_icon} className="w-4" alt="" />
+          <FaDownload className="w-4" />
         </motion.a>
       </div>
     </div>

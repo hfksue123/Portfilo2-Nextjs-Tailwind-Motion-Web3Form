@@ -8,22 +8,18 @@ const StairTransition = () => {
 
   return (
     <AnimatePresence mode="wait">
-      <div key={pathname}>
-        {/* Cầu thang animation */}
+      <motion.div key={pathname}>
         <div className="fixed inset-0 z-[9999] pointer-events-none flex">
           <Stairs />
         </div>
 
-        {/* Overlay fade */}
         <motion.div
           className="fixed inset-0 bg-primary pointer-events-none z-[9998]"
           initial={{ opacity: 1 }}
-          animate={{
-            opacity: 0,
-            transition: { duration: 0.4, ease: "easeInOut" },
-          }}
+          animate={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
         />
-      </div>
+      </motion.div>
     </AnimatePresence>
   );
 };

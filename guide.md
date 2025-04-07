@@ -13,6 +13,7 @@ thẻ html trong layout.js
 - Viết js xử lý trong page.js và bỏ props drilling xuống các components con (ex: `<NavBar isDarkMode={isDarkMode}`)
 - Qua Navbar.jsx thêm `const NavBar = ({isDarkMode, setIsDarkMode})` và xử lý button là xong.
 - Chỉnh sửa lại các ảnh, text cho phù hợp từng theme (ex:`src={isDarkMode ? assets.logo_dark : assets.logo}`)
+- Hiệu ứng spin infinity icon Sun lấy biến hasHydrated từ ThemeContext.jsx để biết client đã đọc xong theme từ localStorage chưa để render hiệu ứng, tránh lỗi khi render trước khi biết user đang ở dark hay light mode.
 
 3. Cài đặt Motion với React: `https://motion.dev/docs/react-quick-start`
 >> npm install motion

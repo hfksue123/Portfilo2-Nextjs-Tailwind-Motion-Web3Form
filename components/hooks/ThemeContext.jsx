@@ -7,6 +7,7 @@ const ThemeContext = createContext();
 // Provider để bao bọc toàn bộ ứng dụng
 export function ThemeProvider({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [hasHydrated, setHasHydrated] = useState(false);
 
   // Kiểm tra theme trong localStorage khi load trang
   useEffect(() => {
@@ -19,6 +20,7 @@ export function ThemeProvider({ children }) {
     } else {
       setIsDarkMode(false);
     }
+    setHasHydrated(true);
   }, []);
 
   // Cập nhật class cho HTML khi theme thay đổi
@@ -33,7 +35,7 @@ export function ThemeProvider({ children }) {
   }, [isDarkMode]);
 
   return (
-    <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+    <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode, hasHydrated }}>
       {children}
     </ThemeContext.Provider>
   );

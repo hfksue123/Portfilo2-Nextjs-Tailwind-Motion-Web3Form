@@ -63,21 +63,21 @@ const About = () => {
               language="English"
               time="15/08/2024"
               score="805 Points"
-              description="I possess strong reading comprehension skills in English and am able to effectively understand spoken language."
+              description="I can read and understand English well, and I can also follow spoken English without much difficulty."
             />
             <Details
-              category="TOEIC Listening & Reading"
+              category="TOEIC Speaking & Writing"
               language="English"
               time="15/03/2025"
               score="290 Points"
-              description="I am capable of communicating verbally at a basic conversational level and have a solid command of written English."
+              description="I am capable of communicating verbally at a basic conversational level and write English clearly and correctly."
             />
             <Details
               category="Native Language"
               language="Vietnamese"
               time="2002 - Present"
               score="N/A"
-              description="Vietnamese is my native language and mother tongue, which I have used fluently in both personal and academic settings throughout my life."
+              description="Vietnamese is my native language and mother tongue, which I have used fluently throughout my life."
             />
           </ul>
         </div>

@@ -16,7 +16,7 @@ import {
   SiAdobelightroom, SiAdobeaudition
 } from "react-icons/si";
 
-import { RiSpeakFill } from "react-icons/ri";
+import { RiSpeakFill,RiRobot2Fill } from "react-icons/ri";
 import { HiLightBulb } from "react-icons/hi";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import { IoBook } from "react-icons/io5";
@@ -64,6 +64,7 @@ const skillsData = [
     skills: [
       { name: "Photography", icon: <FaCamera className="dark:text-white" />, level: 95 },
       { name: "Teamwork Skills", icon: <FaUserFriends className="text-green-400" />, level: 90 },
+      { name: "Apply AI to work", icon: <RiRobot2Fill className="text-cyan-500" />, level: 90 },
       { name: "Communication Skills", icon: <RiSpeakFill className="text-blue-400" />, level: 75 },
       { name: "Creativity In Problem Solving", icon: <HiLightBulb className="text-yellow-600 dark:text-yellow-400" />, level: 88 },
       { name: "Searching Information", icon: <FaSearch className="text-red-600 dark:text-red-500" />, level: 85 },
