@@ -114,7 +114,8 @@ const AboutHeader = () => {
           <div className="flex flex-col lg:flex-row gap-8 w-full">
             {/* BIOGRAPHY */}
             <div className="flex-1 flex flex-col items-center lg:items-start justify-start">
-              <h2 className="mb-3 text-lg font-bold uppercase text-grayTheme/75 dark:text-white">
+              <h2 className="mb-3 text-lg font-bold uppercase text-grayTheme/75 dark:text-white
+              ">
                 Introduction
               </h2>
               <motion.p
@@ -183,7 +184,7 @@ const AboutHeader = () => {
               {/* Stat 3 */}
               <div className="flex flex-col items-center justify-center">
                 <div className="inline-block text-2xl md:text-5xl font-bold">
-                  <AnimationNumbers value={15} />
+                  <AnimationNumbers value={15} />+
                 </div>
                 <h2 className="text-sm md:text-lg capitalize text-grayTheme dark:text-white">
                 Tools/Techs Explored
@@ -193,7 +194,7 @@ const AboutHeader = () => {
               {/* Stat 4 */}
               <div className="flex flex-col items-center justify-center">
                 <div className="inline-block text-2xl md:text-5xl font-bold">
-                  <AnimationNumbers value={50} />
+                  <AnimationNumbers value={30} />+
                 </div>
                 <h2 className="text-sm md:text-lg capitalize text-grayTheme dark:text-white">
                 Hours' Coding Weekly

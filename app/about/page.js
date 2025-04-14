@@ -12,7 +12,7 @@ const Details = ({ category, language, time, score, description }) => {
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col justify-between"
+      className="my-4 first:mt-0 last:mb-0 w-full mr-6 ml-[55px] md:ml-[190px] flex flex-col"
     >
       <CircleIcon reference={ref} />
 
@@ -31,7 +31,7 @@ const Details = ({ category, language, time, score, description }) => {
         <span className="capitalize font-medium text-dark/75">
           {time} | {score}
         </span>
-        <p className="font-medium w-full ">{description}</p>
+        <p className="font-medium w-[90%] text-justify">{description}</p>
       </motion.div>
     </li>
   );

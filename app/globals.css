@@ -23,6 +23,9 @@
   --inset-shadow-2xs: inset 0 1px rgb(0 0 0 / 0.05);
   /* svg shadow */
   --drop-shadow-xs: 0 1px 1px rgb(0 0 0 / 0.05);
+  /* screen */
+  --breakpoint-sm: 400px;
+
 }
 
 /* loading css */

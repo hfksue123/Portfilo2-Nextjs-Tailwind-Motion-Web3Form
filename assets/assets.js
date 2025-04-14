@@ -11,6 +11,10 @@ import school2 from "./school2.jpg";
 import school3 from "./school3.jpg";
 import school4 from "./school4.jpg";
 import profile2 from "./profile2.jpg";
+import project1 from "./project1.jpg";
+import project2 from "./project2.jpg";
+import project3 from "./project3.jpg";
+import project4 from "./project4.jpg";
 
 export const assets = {
   user_image,
@@ -30,6 +34,10 @@ const assets2 = {
   school3,
   school4,
   profile2,
+  project1,
+  project2,
+  project3,
+  project4,
 };
 
 export const toolsData = [

@@ -16,6 +16,8 @@ import {
   SiAdobelightroom, SiAdobeaudition
 } from "react-icons/si";
 
+import { GrDocumentPdf } from "react-icons/gr";
+
 import { RiSpeakFill,RiRobot2Fill } from "react-icons/ri";
 import { HiLightBulb } from "react-icons/hi";
 import { BiLogoVisualStudio } from "react-icons/bi";
@@ -30,7 +32,7 @@ const skillsData = [
       { name: "CSS", icon: <FaCss3Alt className="text-blue-500" />, level: 90 },
       { name: "JavaScript", icon: <FaJs className="text-yellow-400" />, level: 85 },
       { name: "React", icon: <FaReact className="text-cyan-400" />, level: 85 },
-      { name: "Vue", icon: <FaVuejs className="text-green-500" />, level: 85 },
+      { name: "Vue", icon: <FaVuejs className="text-green-500" />, level: 80 },
       { name: "Next.js", icon: <SiNextdotjs />, level: 80 },
       { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-400" />, level: 85 },
       { name: "Java", icon: <FaJava className="text-yellow-500" />, level: 75 },
@@ -64,6 +66,7 @@ const skillsData = [
     skills: [
       { name: "Photography", icon: <FaCamera className="dark:text-white" />, level: 95 },
       { name: "Teamwork Skills", icon: <FaUserFriends className="text-green-400" />, level: 90 },
+      { name: "Using Office Tools", icon: <GrDocumentPdf className="text-orange-600" />, level: 90 },
       { name: "Apply AI to work", icon: <RiRobot2Fill className="text-cyan-500" />, level: 90 },
       { name: "Communication Skills", icon: <RiSpeakFill className="text-blue-400" />, level: 75 },
       { name: "Creativity In Problem Solving", icon: <HiLightBulb className="text-yellow-600 dark:text-yellow-400" />, level: 88 },

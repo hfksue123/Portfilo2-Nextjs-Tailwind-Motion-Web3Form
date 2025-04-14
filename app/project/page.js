@@ -4,21 +4,28 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import assets from "@/assets/assets";
 import ScrollUpButton from "@/components/ScrollUpButton";
+// icon
 import { FaReact, FaVuejs, FaCss3Alt, FaGithub } from "react-icons/fa";
-import { SiCloudinary } from "react-icons/si";
+import { SiCloudinary, SiSanity, SiNextdotjs, SiClerk } from "react-icons/si";
+import { RiTailwindCssLine } from "react-icons/ri";
+import { FaHtml5 } from "react-icons/fa";
+// component
 import AnimateText from "@/components/AnimateText";
+import { FaH } from "react-icons/fa6";
 
 // Dữ liệu project
 
 const projects = [
   {
-    title: "1. Portfolio Website",
+    title: "1. Personal Photo Gallery",
     summary:
-      "This is my portfolio website was built with Next.js and Tailwind CSS. It features a responsive design and is optimized for performance.",
-    img: assets.background1,
-    link: "https://baosu-portfolio.vercel.app/",
-    github: "https://github.com/baosu-portfolio/baosu-portfolio",
+      "This website is built entirely with pure CSS and Vue.js, featuring a collection of photographs all captured by me — each image tells a story from my own perspective.",
+    img: assets.project1,
+    link: "https://hfksue123.github.io/album-cua-bao/",
+    github: "https://github.com/hfksue123/album-cua-bao.git",
     featured: true,
+    linkActive: true,
+    githubActive: true,
     tech: [
       { icon: FaVuejs, name: "Vue.js" },
       { icon: FaCss3Alt, name: "CSS3" },
@@ -26,37 +33,46 @@ const projects = [
     ],
   },
   {
-    title: "2. Photo Gallery",
-    summary: "A simple gallery with lightbox...",
-    img: assets.background1,
-    link: "https://baosu-gallery.vercel.app/",
-    github: "https://github.com/baosu/photo-gallery",
+    title: "2. Frontend Coffee Shop Website",
+    summary: "A simple website with tailwind.",
+    img: assets.project2,
+    link: "https://hfksue123.github.io/Frontend-website-using-tailwindCSS-and-AOS/",
+    github:
+      "https://github.com/hfksue123/Frontend-website-using-tailwindCSS-and-AOS.git",
     featured: false,
+    linkActive: true,
+    githubActive: true,
     tech: [
-      { icon: FaVuejs, name: "Vue.js" },
-      { icon: FaCss3Alt, name: "CSS3" },
+      { icon: FaHtml5, name: "HTML5" },
+      { icon: RiTailwindCssLine, name: "TailwindCSS" },
     ],
   },
   {
-    title: "3. Task Manager App",
-    summary: "A basic task management app...",
-    img: assets.background1,
-    link: "https://baosu-tasks.vercel.app/",
-    github: "https://github.com/baosu/task-manager",
+    title: "3. Fullstack Ecommerce Website (Building)",
+    summary: "A website built with Nextjs and Sanity.",
+    img: assets.project3,
+    link: "",
+    github: "https://github.com/hfksue123/Fullstack-Ecommerce-website.git",
     featured: false,
+    linkActive: false,
+    githubActive: true,
     tech: [
-      { icon: FaVuejs, name: "Vue.js" },
-      { icon: FaCss3Alt, name: "CSS3" },
+      { icon: SiSanity, name: "Sanity" },
+      { icon: SiNextdotjs, name: "Next Js" },
+      { icon: SiClerk, name: "Clerk" },
+      { icon: RiTailwindCssLine, name: "TailwindCSS" },
     ],
   },
   {
-    title: "4. Kanban Board",
+    title: "4. My Personal Portfolio",
     summary:
       "This is my portfolio website was built with Next.js and Tailwind CSS. It features a responsive design and is optimized for performance.",
-    img: assets.background1,
+    img: assets.project4,
     link: "https://baosu-portfolio.vercel.app/",
     github: "https://github.com/baosu-portfolio/baosu-portfolio",
     featured: true,
+    linkActive: true,
+    githubActive: true,
     tech: [
       { icon: FaVuejs, name: "Vue.js" },
       { icon: FaCss3Alt, name: "CSS3" },
@@ -65,7 +81,16 @@ const projects = [
 ];
 
 // Component dự án nổi bật
-const FeaturedProject = ({ title, summary, img, link, github, tech }) => (
+const FeaturedProject = ({
+  title,
+  summary,
+  img,
+  link,
+  github,
+  linkActive,
+  githubActive,
+  tech,
+}) => (
   <div
     className="w-full flex flex-col items-center justify-center md:flex-row bg-white dark:bg-grayTheme 
   border-2 border-grayShadow dark:border-gray-300 rounded-2xl p-3 md:p-6 shadow-[5px_5px_0_var(--gray)] dark:shadow-[5px_5px_0_var(--white)]"
@@ -117,13 +142,25 @@ const FeaturedProject = ({ title, summary, img, link, github, tech }) => (
 
       {/* Links */}
       <div className="flex items-center gap-4">
-        <Link href={github} target="_blank" className="text-gray-700">
+        {/* Github */}
+        <Link
+          href={githubActive ? github : "#"}
+          target="_blank"
+          className={`text-gray-700 ${
+            !githubActive ? "pointer-events-none opacity-40" : ""
+          }`}
+        >
           <FaGithub className="text-[40px] text-grayTheme dark:text-white hover:text-cyanTheme transition-colors duration-200" />
         </Link>
+        {/* Link */}
         <Link
-          href={link}
+          href={linkActive ? link : "#"}
           target="_blank"
-          className="bg-grayTheme dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg flex items-center gap-2"
+          className={`px-4 py-2 rounded-lg flex items-center gap-2 ${
+            linkActive
+              ? "bg-grayTheme dark:bg-white text-white dark:text-black"
+              : "bg-gray-300 dark:bg-gray-600 text-gray-500 pointer-events-none opacity-50"
+          }`}
         >
           Visit Project
         </Link>
@@ -133,7 +170,7 @@ const FeaturedProject = ({ title, summary, img, link, github, tech }) => (
 );
 
 // Component dự án thường
-const SimpleProject = ({ title, summary, img, link, github, tech }) => (
+const SimpleProject = ({ title, summary, img, link, github, tech, linkActive, githubActive }) => (
   <div
     className="items-center justify-center md:flex-row bg-white dark:bg-grayTheme 
   border-2 border-grayShadow dark:border-gray-300 rounded-2xl p-3 md:p-6 shadow-[5px_5px_0_var(--gray)] dark:shadow-[5px_5px_0_var(--white)]"
@@ -181,14 +218,25 @@ const SimpleProject = ({ title, summary, img, link, github, tech }) => (
     <div className="flex items-center justify-between gap-3 mt-4">
       {/* visit button */}
       <Link
-        href={link}
+        href={linkActive ? link : "#"}
         target="_blank"
-        className="bg-grayTheme dark:bg-white text-white dark:text-black px-4 py-1 rounded-lg flex items-center gap-2"
+        className={`bg-grayTheme dark:bg-white text-white dark:text-black px-4 py-1 rounded-lg flex items-center gap-2
+        ${
+          linkActive
+            ? "bg-grayTheme dark:bg-white text-white dark:text-black"
+            : "bg-gray-300 dark:bg-gray-600 text-gray-500 pointer-events-none opacity-50"
+        }`}
       >
         Visit Project
       </Link>
       {/* github */}
-      <Link href={github} target="_blank">
+      <Link
+        href={githubActive ? github : "#"}
+        target="_blank"
+        className={`text-gray-700 ${
+          !githubActive ? "pointer-events-none opacity-40" : ""
+        }`}
+      >
         <FaGithub className="text-[35px] text-grayTheme dark:text-white hover:text-cyanTheme transition-colors duration-200" />
       </Link>
     </div>

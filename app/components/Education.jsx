@@ -51,9 +51,9 @@ const Education = () => {
       dark:bg-cyanTheme origin-top drop-shadow-[0_0_5px_rgba(0,255,255,0.2)]"
         />
 
-        <ul className="w-full flex flex-col items-start justify-between ml-4 space-y-8">
+        <ul className="w-[85%] flex flex-col justify-center max-sm:ml-8 space-y-8">
           {/* Item 1 */}
-          <li className="flex w-full justify-center items-center gap-6">
+          <li className="flex w-full justify-evenly items-center gap-6">
             <Details
               type="University"
               time="2020 - 2025"

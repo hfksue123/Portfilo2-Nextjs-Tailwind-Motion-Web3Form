@@ -4,31 +4,27 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const workData = [
   {
-    title: "Frontend project",
-    description: "Web Design",
-    bgImage: "/work-1.png",
+    title: "Gallery project",
+    description: "Image Web",
+    bgImage: "/work-1.jpg",
   },
   {
-    title: "Photography site",
+    title: "Frontend site",
     description: "Web Design",
-    bgImage: "/work-3.png",
+    bgImage: "/work-2.jpg",
   },
   {
-    title: "UI/UX designing",
-    description: "UI/UX Design",
-    bgImage: "/work-4.png",
+    title: "Ecommerce Web",
+    description: "Fullstack",
+    bgImage: "/work-3.jpg",
   },
 ];
 
 const Work = () => {
   return (
     <div id="work" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg">My Portfolio</h4>
-      <h2 className="text-center text-5xl">My Latest Project</h2>
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12">
-        I am a frontend developer from VietNam, with 10 years of experience in
-        multiple companies like Microsoft, Tesla and Google.
-      </p>
+      <h4 className="text-center mb-2 text-lg">My Works</h4>
+      <h2 className="text-center text-5xl">My Latest Projects</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 my-10 dark:text-black">
         {workData.map((project, index) => (

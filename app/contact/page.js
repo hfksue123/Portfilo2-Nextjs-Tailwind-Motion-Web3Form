@@ -7,6 +7,7 @@ import {
   IoIosPin,
   IoIosMail,
   IoIosCall,
+  IoMdGlobe,
 } from "react-icons/io";
 import { motion } from "framer-motion";
 import AnimateText from "@/components/AnimateText";
@@ -25,7 +26,7 @@ const personalInfo = [
   },
   {
     label: "Address",
-    value: "Thu Duc, Ho Chi Minh City",
+    value: "Ho Chi Minh City",
     icon: <IoIosPin />,
   },
   {
@@ -37,6 +38,11 @@ const personalInfo = [
     label: "Phone",
     value: "+84 34 898 198",
     icon: <IoIosCall />,
+  },
+  {
+    label: "Nationality",
+    value: "VietNam",
+    icon: <IoMdGlobe />,
   },
 ];
 
