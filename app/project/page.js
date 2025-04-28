@@ -5,10 +5,12 @@ import { motion } from "framer-motion";
 import assets from "@/assets/assets";
 import ScrollUpButton from "@/components/ScrollUpButton";
 // icon
-import { FaReact, FaVuejs, FaCss3Alt, FaGithub } from "react-icons/fa";
-import { SiCloudinary, SiSanity, SiNextdotjs, SiClerk } from "react-icons/si";
+import { FaReact, FaVuejs, FaCss3Alt, FaGithub,FaPaypal  } from "react-icons/fa";
+import { SiCloudinary, SiSanity, SiNextdotjs, SiClerk,SiRedux,SiMongodb   } from "react-icons/si";
 import { RiTailwindCssLine } from "react-icons/ri";
 import { FaHtml5 } from "react-icons/fa";
+import { TbBrandVite } from "react-icons/tb";
+import { FiFramer } from "react-icons/fi";
 // component
 import AnimateText from "@/components/AnimateText";
 import { FaH } from "react-icons/fa6";
@@ -33,7 +35,7 @@ const projects = [
     ],
   },
   {
-    title: "2. Frontend Coffee Shop Website",
+    title: "3. Frontend Coffee Shop Website",
     summary: "A simple website with tailwind.",
     img: assets.project2,
     link: "https://hfksue123.github.io/Frontend-website-using-tailwindCSS-and-AOS/",
@@ -48,7 +50,7 @@ const projects = [
     ],
   },
   {
-    title: "3. Fullstack Ecommerce Website (Building)",
+    title: "4. Fullstack Ecommerce Website (Building)",
     summary: "A website built with Nextjs and Sanity.",
     img: assets.project3,
     link: "",
@@ -64,18 +66,38 @@ const projects = [
     ],
   },
   {
-    title: "4. My Personal Portfolio",
+    title: "5. My Personal Portfolio",
     summary:
       "This is my portfolio website was built with Next.js and Tailwind CSS. It features a responsive design and is optimized for performance.",
     img: assets.project4,
-    link: "https://baosu-portfolio.vercel.app/",
-    github: "https://github.com/baosu-portfolio/baosu-portfolio",
+    link: "https://portfilo2-nextjs.vercel.app/",
+    github: "https://github.com/hfksue123/Portfilo2-Nextjs-Tailwind-Motion-Web3Form.git",
     featured: true,
     linkActive: true,
     githubActive: true,
     tech: [
-      { icon: FaVuejs, name: "Vue.js" },
-      { icon: FaCss3Alt, name: "CSS3" },
+      { icon: FaVuejs, name: "Next.js" },
+      { icon: RiTailwindCssLine, name: "Tailwindcss" },
+      { icon: FiFramer , name: "Framer-motion" },
+    ],
+  },
+  {
+    title: "2. Full Stack Fashion Website",
+    summary:
+      "A modern full-stack fashion e-commerce platform with responsive UI, secure authentication, PayPal checkout, Cloudinary image uploads, and a powerful admin dashboard to manage users, products, and orders.",
+    img: assets.project5,
+    link: "https://fullstack-fashion-app.vercel.app/",
+    github: "https://github.com/hfksue123/fullstack-fashion-app.git",
+    featured: true,
+    linkActive: true,
+    githubActive: true,
+    tech: [
+      { icon: TbBrandVite, name: "Vite" },
+      { icon: FaReact, name: "React" },
+      { icon: RiTailwindCssLine, name: "Tailwindcss"},
+      { icon: SiRedux, name: "Redux Toolkit"},
+      { icon: FaPaypal , name: "Paypal API"},
+      {icon: SiMongodb, name: "MongoDB + Mongoose"}
     ],
   },
 ];
@@ -267,6 +289,19 @@ const Project = () => {
         </motion.div>
       )}
 
+      {/* Featured 2 */}
+      {featured[2] && (
+        <motion.div
+          initial={{ y: 50 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.8, type: "spring" }}
+          className="flex flex-col gap-16 mb-16"
+        >
+          <FeaturedProject {...featured[2]} />
+        </motion.div>
+      )}
+
+
       {/* Simple 1 + 2 */}
       <motion.div
         initial={{ y: 50 }}
@@ -289,12 +324,6 @@ const Project = () => {
           <FeaturedProject {...featured[1]} />
         </motion.div>
       )}
-
-      {/* Simple 3 + 4 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {others[2] && <SimpleProject {...others[2]} />}
-        {others[3] && <SimpleProject {...others[3]} />}
-      </div>
 
       <ScrollUpButton className="fixed bottom-3 right-3 md:bottom-10 md:right-10" />
     </main>
